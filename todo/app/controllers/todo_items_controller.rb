@@ -8,7 +8,7 @@ class TodoItemsController < ApplicationController
   end
 
   def destroy
-    @todo_item = @todo_list.todo_items.find(params[:id])
+    #@todo_item = @todo_list.todo_items.find(params[:id])
     if @todo_item.destroy
       flash[:success] = "Todo List was deleted."
     else
@@ -29,7 +29,7 @@ class TodoItemsController < ApplicationController
   end
 
   def set_todo_item
-    @todo_item = @todo_list.todo_items.create(todo_item_params)
+    @todo_item = @todo_list.todo_items.find(params[:id])
   end
 
   def todo_item_params
